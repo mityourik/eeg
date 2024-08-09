@@ -1,0 +1,66 @@
+$grey-header: #f8f9fa;
+$nav-item-color: #343a40;
+$nav-item-hover-color: #495057;
+$active-underline-color: #495057;
+
+.header {
+  display: flex;
+  background-color: $grey-header;
+  padding: 20px;
+
+  &__nav {
+    width: 100%;
+  }
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+
+  .navItem {
+    color: $nav-item-color;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease, opacity 0.3s ease, transform 0.1s ease-in;
+    position: relative;
+
+    &:hover {
+      color: $nav-item-hover-color;
+      opacity: 1;
+      transform: translate(-2px, 2px);
+    }
+
+    &:hover ~ .navItem {
+      opacity: 0.3;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background-color: $active-underline-color;
+      bottom: -5px;
+      left: 50%;
+      transition: width 0.4s ease, left 0.4s ease;
+    }
+
+    &.active::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &:hover .navItem {
+    opacity: 0.5;
+  }
+
+  .navItem:hover {
+    opacity: 1;
+  }
+}
