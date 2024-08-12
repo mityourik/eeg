@@ -6,9 +6,14 @@ const Main = () => {
     return (
         <section className={styles.main}>
             <img className={styles['main__image']} src={mainImage} alt="main image"/>
-            <img className={styles['main__logo']} src={mainLogo} alt="main logo"/>
+            <a href="/" className={styles['main__logo-link']}>
+                <img className={styles['main__logo']} src={mainLogo} alt="main logo"/>
+            </a>
+            {/* <article className={styles['main__article']}>
+                <button className={styles['main__button']}>Записаться на обучение</button>
+            </article> */}
         </section>
     )
 }
 
-export default Main
+export default Main;

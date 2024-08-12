@@ -12,7 +12,7 @@ const Header = () => {
     <header className={styles.header}>
         <nav className={styles['header__nav']}>
             <ul className={styles.navList}>
-            {['Записаться', 'Контакты', 'О нас', 'Информация'].map((item, index) => (
+            {['Контакты', 'О нас', 'Информация', 'О школе'].map((item, index) => (
                 <li
                 key={index}
                 className={`${styles.navItem} ${activeIndex === index ? styles.active : ''}`}

@@ -16,5 +16,32 @@
     left: 20px;
     top: 20px;
     cursor: pointer;
+
+    &-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+
+  &__article {
+    position: relative;
+    top: 250px;
+    left: 580px;
+    background-color: #e9e9e9;
+    border-radius: 4px;
+    width: 400px;
+    height: 200px;
+  }
+
+  &__button {
+    position: absolute;
+    background-color: $orange;
+    bottom: 10px;
+    left: 50px;
+    color: $white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }

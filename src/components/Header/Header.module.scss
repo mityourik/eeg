@@ -7,6 +7,8 @@ $active-underline-color: #495057;
   display: flex;
   background-color: $grey-header;
   padding: 20px;
+  box-shadow: 0px 27px 48px -23px rgba(28, 39, 49, 0.16);
+  z-index: map-get($zIndexes, header);
 
   &__nav {
     width: 100%;
