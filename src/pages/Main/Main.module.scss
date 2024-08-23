@@ -8,19 +8,7 @@
     object-fit: cover;
     object-position: center;
     position: absolute;
-  }
-
-  &__logo {
-    position: absolute;
-    width: 300px;
-    left: 20px;
-    top: 20px;
-    cursor: pointer;
-
-    &-link {
-      display: inline-block;
-      text-decoration: none;
-    }
+    z-index: 0;
   }
 
   &__article {
@@ -44,4 +32,25 @@
     border-radius: 5px;
     cursor: pointer;
   }
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0;
+  z-index: 10;
+  overflow: hidden;
+  transition: height 0.8s ease;
+}
+
+.open {
+  height: 69.8vh;
+}
+
+.closing {
+  height: 0;
 }

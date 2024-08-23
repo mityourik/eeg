@@ -1,14 +1,16 @@
-import Header from "./components/Header/Header"
-import Main from "./pages/Main/Main"
+import { useState } from 'react';
+import Main from './pages/Main/Main';
+import Header from './components/Header/Header';
 
-function App() {
+const App = () => {
+  const [activeMenuIndex, setActiveMenuIndex] = useState<number | null>(null);
 
   return (
     <>
-      <Header />
-      <Main />
+      <Header onMenuSelect={setActiveMenuIndex} />
+      <Main activeMenuIndex={activeMenuIndex} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

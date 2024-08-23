@@ -12,6 +12,19 @@ $active-underline-color: #495057;
 
   &__nav {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.main__logo {
+  width: 200px;
+  cursor: pointer;
+
+  &-link {
+    display: flex;
+    text-decoration: none;
   }
 }
 
@@ -26,10 +39,14 @@ $active-underline-color: #495057;
     color: $nav-item-color;
     font-size: 18px;
     text-transform: uppercase;
-    padding: 10px;
     cursor: pointer;
     transition: color 0.3s ease, opacity 0.3s ease, transform 0.1s ease-in;
     position: relative;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &:hover {
       color: $nav-item-hover-color;
