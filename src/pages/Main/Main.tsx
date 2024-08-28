@@ -14,7 +14,7 @@ const Main: React.FC<MainProps> = ({ activeMenuIndex }) => {
     if (activeMenuIndex !== null) {
       setIsMenuVisible(true);
     } else {
-      setTimeout(() => setIsMenuVisible(false), 500); // Ожидаем завершения анимации
+      setTimeout(() => setIsMenuVisible(false), 500);
     }
   }, [activeMenuIndex]);
 
@@ -27,6 +27,7 @@ const Main: React.FC<MainProps> = ({ activeMenuIndex }) => {
           activeMenuIndex === null ? styles.closing : ''
         } ${isMenuVisible ? styles.open : ''}`}
       >
+        <span className={styles['menu__close-button']} onClick={() => setIsMenuVisible(false)}/>
         {activeMenuIndex === 0 && <Contacts />}
         {activeMenuIndex === 1 && <p>О нас: ...</p>}
         {activeMenuIndex === 2 && <p>Информация: ...</p>}
