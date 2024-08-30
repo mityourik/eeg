@@ -1,17 +1,14 @@
-import { useState } from 'react';
 import mainLogo from '../../vendor/icons/main-logo-biola.svg';
 import styles from './Header.module.scss';
 
 interface HeaderProps {
   onMenuSelect: (index: number | null) => void;
+  activeMenuIndex: number | null; // Добавляем активный индекс из внешнего состояния
 }
 
-const Header: React.FC<HeaderProps> = ({ onMenuSelect }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
+const Header: React.FC<HeaderProps> = ({ onMenuSelect, activeMenuIndex }) => {
   const handleClick = (index: number) => {
-    const newIndex = activeIndex === index ? null : index;
-    setActiveIndex(newIndex);
+    const newIndex = activeMenuIndex === index ? null : index;
     onMenuSelect(newIndex);
   };
 
@@ -25,7 +22,9 @@ const Header: React.FC<HeaderProps> = ({ onMenuSelect }) => {
           {['Контакты', 'О нас', 'Информация', 'О школе'].map((item, index) => (
             <li
               key={index}
-              className={`${styles.navItem} ${activeIndex === index ? styles.active : ''}`}
+              className={`${styles.navItem} ${
+                activeMenuIndex === index ? styles.active : ''
+              }`}
               onClick={() => handleClick(index)}
             >
               {item}
@@ -35,6 +34,6 @@ const Header: React.FC<HeaderProps> = ({ onMenuSelect }) => {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
